@@ -1,0 +1,57 @@
+#include <iostream>
+#include <string>
+#include <deque>
+#include <algorithm>
+using namespace std;
+ int factorial(int i){
+ int sum = 1;
+    for(int l = i;l>0;l--){
+       sum *=i;
+    }
+       return sum;   
+}
+ bool permutation(string s,string st){
+
+ sort(s.begin(),s.end());
+ for(int i = 1;i<=factorial(s.size());i++){
+    if(st.find(s) != string::npos){
+        return true;
+        
+    }
+    else if(i == factorial(s.size())){
+         return false;
+       
+    }
+    else{
+    for(int j = 0;j<=2;j++){
+        if(s[3-j]>s[2-j]){
+            int l = 2-j;
+            int k = 3;
+         while(s[l]>s[k]){
+                k--;
+            }
+            swap(s[l],s[k]);
+            sort(s.begin()+1+l,s.end());
+
+
+        }
+    }
+}
+
+ }
+
+
+ } 
+int main(){
+    string str = "abcd";
+    string st = "dcbaghjgdsgatgfydtsgfhddfcb";
+    if(permutation(str,st)){
+        cout<<"yes"<<endl;
+    }
+    else{
+        cout<<"No"<<endl;
+        }
+    
+
+    return 0;
+}
