@@ -1,0 +1,36 @@
+# String Permutation
+
+This program finds permutations of a string using C++.
+
+## Approach
+
+My approach is based on rearranging the characters of the string step by step.
+
+1. First, I sort the string so that I start from the smallest possible arrangement.
+2. I use swapping to change the position of characters.
+3. After fixing a position, I rearrange the remaining characters to generate the next possible arrangement.
+4. I continue this process until all possible permutations are generated.
+5. The program compares the generated arrangement with the required string when needed.
+
+### Main Idea
+
+The main idea is to **choose a character for the current position, swap it with another character, and then arrange the remaining characters**.
+
+For example:
+
+```text
+abc
+```
+
+Possible permutations are:
+
+```text
+abc
+acb
+bac
+bca
+cab
+cba
+```
+
+The important part of my approach is understanding how swapping changes the arrangement instead of directly using a built-in permutation function.
